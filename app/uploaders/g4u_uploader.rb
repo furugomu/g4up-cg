@@ -7,18 +7,16 @@ class G4uUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    if model.is_a?(Entry)
+      "uploads/#{model.id}"
+    else
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
   end
 
   version :thumb do
-    process :resize_to_fit => [640, 320]
-    # TODO 画質を20くらいにしたい
-    process :quality => 10
-  end
-
-  version :thumb2 do
-    process :resize_to_fit => [640, 320]
-    process :quality => 100
+    process :resize_to_fit => [640, 360]
+    process :quality => 40
   end
 
   def extension_white_list
