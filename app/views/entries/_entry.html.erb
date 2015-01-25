@@ -1,26 +1,14 @@
-<%= article({
-      class: entry.idol.try(:romaji),
-    }) do %>
- <% if entry.photo.present? %>
- <p class="thumbnail">
-  <%= link_to(
-        lazy_image(entry.photo.url(:thumb), alt: entry.id),
-        entry) %>
- </p>
- <% end %>
- <div class="text">
-  <p class="body">
-   <%= entry.body %>
-  </p>
-  <%= footer do %>
-   <% if entry.root? %>
-    <span class="tags">
-     <% entry.tags.each do |tag| %>
-      <%= link_to(tag.name, tag) %>
-     <% end %>
-    </span>
-   <% end %>
-   <%= entry_time(entry) %>
+<article class=thumb>
+ <div class=thumb-face>
+  <%= link_to entry, class: 'thumb-link' do %>
+   <%= image_tag entry.cover_image.url(:thumb), alt: '', class: 'thumb-image' %>
   <% end %>
  </div>
-<% end %>
+ <div class=thumb-text>
+  <p class=thumb-title><%= entry.title %></p>
+  <div class=thumb-count><%= t('.count', count: entry.images.size) %></div>
+  <p class=thumb-time>
+   <%= content_tag :time, l(entry.created_at), datetime: entry.created_at.iso8601 %>
+  </p>
+ </div>
+</article>

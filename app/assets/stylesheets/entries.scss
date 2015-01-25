@@ -1,0 +1,70 @@
+@import "common";
+.entries {
+  line-height: 1;
+}
+.thumb {
+  $image-width: 320px;
+  $image-height: 180px;
+
+  display: inline-block;
+  position: relative;
+  width: $image-width;
+  height: $image-height;
+  background-color: $passion-color;
+  color: $fgcolor;
+  margin: 5px;
+  z-index: 1;
+  &:hover { z-index: 2; }
+
+  &-link {
+    text-decoration: none;
+  }
+
+  &-face {
+    position: relative;
+  }
+
+  &-image {
+    width: 100%;
+  }
+
+  &-text {
+    /* hover で出す */
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: inherit;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 500ms ease;
+    -webkit-transition: opacity 500ms ease;
+
+    /* 他 */
+    box-sizing: border-box;
+    padding: 0 1em;
+  }
+  &:hover &-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &-title {
+    font-weight: bolder;
+    /* ... で省略するやつ */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-time {
+    font-size: smaller;
+  }
+
+  &-count {
+    font-size: smaller;
+    width: 2em;
+    float: right;
+  }
+}

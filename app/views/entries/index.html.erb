@@ -1,8 +1,11 @@
-<div id="form-container">
- <p><%= link_to('アップロードする', [:new, :entry], id: 'open-form', class: 'button') %></p>
- <%= render 'form' %>
-</div>
+<p id="notice"><%= notice %></p>
 
-<%= render 'tags', tags: @tags if @tags %>
+<h1>Listing Entries</h1>
 
-<%= render 'entries/entries', entries: @entries %>
+<%= link_to 'New Entry', new_entry_path %>
+
+<section class=entries>
+ <%= render @entries %>
+</section>
+
+<%= paginate @entries %>

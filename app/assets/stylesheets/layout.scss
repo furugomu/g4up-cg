@@ -1,0 +1,11 @@
+@import "common";
+body {
+  background: $bgcolor;
+  color: $fgcolor;
+  margin: 1em;
+  padding: 0;
+}
+
+:link, :visited {
+  color: #003;
+}

@@ -1,7 +1,15 @@
-<% content_for :head do %>
- <%= tag(:meta, name: 'robots', cntent: 'noindex') %>
+<h1>New Entry</h1>
+
+<%= simple_form_for @entry do |f| %>
+ <%= f.input :title %>
+ <%= f.input :body %>
+ <%= f.input :images, as: :file do %>
+  <%= f.file_field :images, multiple: true, accept: 'image/jpeg', required: '' %>
+ <% end %>
+
+ <div class="actions">
+  <%= f.submit %>
+ </div>
 <% end %>
-<section class="upload">
- <h2>ファイルをアップロードする</h2>
-<%= render 'form' %>
-</section>
+
+<%= link_to 'Back', entries_path %>

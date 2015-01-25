@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      entry: エントリー
+    attributes:
+      entry:
+        title: タイトル
+        body: 本文
+        images: 画像
