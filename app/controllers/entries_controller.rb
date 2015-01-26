@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
   def index
-    @entries = Entry.page(params[:page])
+    @entries = Entry.order(:id).reverse_order.page(params[:page])
   end
 
   def show
