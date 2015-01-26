@@ -1,6 +1,7 @@
 # -*- ruby -*-
 source 'https://rubygems.org'
 
+#ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -26,7 +27,7 @@ gem 'mini_magick', '~> 4.0'
 gem 'kaminari', '~> 0.16.0'
 gem 'rails-i18n'
 gem 'simple_form'
-#gem 'formtastic'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'byebug'
