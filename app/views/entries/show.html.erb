@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
- <%= Entry.human_attribute_name(:title) %>:
- <%= @entry.title %>
-</p>
+<article class=entry>
+ <p class=entry-cover>
+  <%= image_tag @entry.cover_image.url, alt: '', class: 'entry-image' %>
+ </p>
 
-<p>
- <%= Entry.human_attribute_name(:body) %>:
- <%= @entry.body %>
-</p>
+ <p class=entry-title><%= @entry.title %></p>
+ <p class=entry-body><%= @entry.body %></p>
 
-<section>
- <%= Entry.human_attribute_name(:images) %>:
- <% Array(@entry.images).each do |image| %>
-  <p><%= image_tag image.url, alt: '' %></p>
- <% end %>
-</section>
+ <section class=entry-images>
+  <% @entry.images[1..-1].each do |image| %>
+   <p><%= image_tag image.url, alt: '', class: 'entry-image' %></p>
+  <% end %>
+ </section>
+</article>
 
 <%= link_to 'Back', entries_path %>

@@ -1,0 +1,13 @@
+.entry {
+  width: 80%;
+  max-width: 1280px;
+  margin: auto;
+
+  &-image {
+    width: 100%;
+  }
+
+  &-title {
+    font-weight: bolder;
+  }
+}
