@@ -26,6 +26,7 @@ gem 'rails-i18n'
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'puma'
+gem 'guard-rspec', require: false, group: :development
 
 group :development, :test do
   gem 'byebug'
@@ -36,6 +37,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+# test
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.5'
